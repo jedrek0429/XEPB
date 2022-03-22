@@ -7,11 +7,11 @@ npm i
 There are two ways to start your bot
 ### Normal shell way
 ```sh
-TOKEN=<bot's token> npm start
+TOKEN='<bot token goes here>' npm start
 ```
 ### Powershell way
 ```powershell
-$env:TOKEN='<bot's token>'; 
+$env:TOKEN='<bot token goes here>'; 
 npm start; 
 Remove-Item Env:\TOKEN
 ```
