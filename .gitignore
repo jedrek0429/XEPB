@@ -4,4 +4,4 @@ node_modules/
 .vscode/
 dist/
 .env
-ecosystem.config.js
+xepb-pm2.json
