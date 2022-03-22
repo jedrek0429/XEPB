@@ -1,12 +1,10 @@
-import Client from '../utils/Client';
-import { ClientEvents } from "discord.js";
+import Client from '../classes/Client';
 
 export interface EventRun {
     (client: Client, ...args: any[]): any;
 }
 
 export interface Event {
-    name: keyof ClientEvents;
     disabled?: boolean;
     once?: boolean;
     run: EventRun;

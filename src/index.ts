@@ -1,4 +1,4 @@
-import Client from "./utils/Client";
+import Client from "./classes/Client";
 
 const client = new Client();
 client.start();

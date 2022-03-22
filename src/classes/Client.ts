@@ -1,6 +1,7 @@
 import { Client, ClientOptions, Intents } from "discord.js";
 import { Event } from "../interfaces/Event";
 import glob from "glob";
+import { basename } from "path";
 
 const defaultClientOptions: ClientOptions = { intents: [Intents.FLAGS.GUILDS]};
 
@@ -17,19 +18,20 @@ export default class XEPBClient extends Client {
     start(token?: string) {
         console.log('Starting...');
         this.login(token);
-        handleEvents(this);
+        this.handleEvents();
     }
-}
 
-const handleEvents = async (client: XEPBClient) => {
-    const events: string[] = [...glob.sync(`${__dirname}/../events/*.{js, ts}`)];
-        for (const eventFile of events) {
-            const event: Event = await import(eventFile);
-            if (event.disabled) continue;
-            if (event.once) {
-                client.once(event.name, event.run.bind(null, client))
-            } else {
-                client.on(event.name, event.run.bind(null, client))
+    async handleEvents() {
+        const events: string[] = [...glob.sync(`${__dirname}/../events/*.{js, ts}`)];
+            for (const eventFile of events) {
+                const event: Event = await import(eventFile);
+                const eventName = basename(eventFile).replace(/.[^/.]+$/, '');
+                if (event.disabled) continue;
+                if (event.once) {
+                    this.once(eventName, event.run.bind(null, this))
+                } else {
+                    this.on(eventName, event.run.bind(null, this))
+                }
             }
-        }
+    }
 }
