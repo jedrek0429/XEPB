@@ -2,5 +2,4 @@ package-lock.json
 node_modules/
 .vscode/
 dist/
-.env
 xepb-pm2.json
