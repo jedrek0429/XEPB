@@ -19,3 +19,9 @@ jobs:
       run: npm i
     - name: Restart pm2 process
       run: pm2 restart xepb --update-env
+  test:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - run: cat /etc/hostname
+    - run: pm2 ls
