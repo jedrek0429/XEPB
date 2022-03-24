@@ -17,9 +17,7 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm i
-    - name: Start
-      run: npm start
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
-    # - name: Restart pm2 process
-    #   run: pm2 restart xepb --update-env
+    - name: Restart pm2 process
+      run: |
+        pm2 delete all
+        pm2 resurrect
