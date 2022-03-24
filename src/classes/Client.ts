@@ -36,7 +36,10 @@ export default class XEPBClient extends Client {
             const event: Event = await import(eventFile);
             const eventName = basename(eventFile).replace(/.[^/.]+$/, '');
             if (event.disabled) continue;
-            if (!Object.keys(Events).includes(eventName) || !Object.values(Events).includes(eventName)) console.warn(`"${eventName}" is not a correct event name, ignoring...`);
+            if (!Object.keys(Events).includes(eventName) && !Object.values(Events).includes(eventName)) {
+                console.warn(`"${eventName}" is not a correct event name, ignoring...`); 
+                continue;
+            }
             if (event.once) this.once(eventName, event.run.bind(null, this));
             else this.on(eventName, event.run.bind(null, this));
         }
