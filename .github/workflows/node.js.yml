@@ -17,5 +17,5 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm i
-    - name: Restart pm2 process
-      run: pm2 restart xepb --update-env
+    # - name: Restart pm2 process
+    #   run: pm2 restart xepb --update-env
