@@ -1,6 +1,6 @@
-import { ClientEvents, EventRun, Client } from "../imports/event";
+import { EventRun } from "../interfaces/Event";
+import Client from "../classes/Client";
 
-export const name: keyof ClientEvents = "ready";
-export const run: EventRun = async (client: Client, args: any) => {
+export const run: EventRun = async (client: Client) => {
     console.log("Ready!");
 };
