@@ -1,4 +1,9 @@
 import Client from "./classes/Client";
 
 const client = new Client();
-client.start();
+
+try {
+    client.start();
+} catch (error) {
+    console.error(error);
+}

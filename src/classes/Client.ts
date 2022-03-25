@@ -8,7 +8,7 @@ import { basename } from "path";
 import * as config from "../config.json";
 
 const { Events } = Constants;
-const defaultClientOptions: ClientOptions = { intents: [Intents.FLAGS.GUILDS]};
+const defaultClientOptions: ClientOptions = { intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ]};
 let rest: REST;
 
 export default class XEPBClient extends Client {
@@ -57,6 +57,8 @@ export default class XEPBClient extends Client {
         rest.put(Routes.applicationCommands(config.client.id), { body: [...this.commands.map(v => v.data)] })
             .then(() => console.log('Registered commands.'))
             .catch(console.error);
+        
+        console.log(this.commands);
     }
 
     Embed = class Embed extends MessageEmbed {
