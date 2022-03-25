@@ -57,8 +57,6 @@ export default class XEPBClient extends Client {
         rest.put(Routes.applicationCommands(config.client.id), { body: [...this.commands.map(v => v.data)] })
             .then(() => console.log('Registered commands.'))
             .catch(console.error);
-        
-        console.log(this.commands);
     }
 
     Embed = class Embed extends MessageEmbed {
