@@ -1,13 +1,13 @@
-name: Node.js CI
+name: XEPB CD
 
 on: push
 
 jobs:
-  start:
+  deploy:
     runs-on: self-hosted
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: 17
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -17,5 +17,3 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm i
-    # - name: Restart pm2 process
-    #   run: pm2 restart --update-env 
