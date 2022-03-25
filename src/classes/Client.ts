@@ -28,6 +28,7 @@ export default class XEPBClient extends Client {
         this.login();
         rest = new REST({ version: '9' }).setToken(this.token!);
         this.handleEvents();
+        this.handleCommands();
     }
 
     async handleEvents() {
@@ -53,7 +54,7 @@ export default class XEPBClient extends Client {
             this.commands.set(command.data.name, command);
         }
 
-        rest.put(Routes.applicationCommands(config.client.id), { body: [...this.commands.values()] })
+        rest.put(Routes.applicationCommands(config.client.id), { body: [...this.commands.map(v => v.data)] })
             .then(() => console.log('Registered commands.'))
             .catch(console.error);
     }

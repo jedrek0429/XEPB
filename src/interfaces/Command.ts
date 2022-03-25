@@ -1,6 +1,5 @@
 import { CommandInteraction, ApplicationCommandData } from "discord.js";
 
-
 export interface CommandRun {
     (interaction: CommandInteraction): any;
 }
