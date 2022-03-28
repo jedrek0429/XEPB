@@ -1,0 +1,5 @@
+{
+    "COMMAND_PING_NAME": "ping",
+    "COMMAND_PING_DESCRIPTION": "Shows bot's ping.",
+    "COMMAND_PING_TEXT_PONG": "Pong!"
+}

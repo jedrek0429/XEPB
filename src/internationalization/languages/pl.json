@@ -1,0 +1,5 @@
+{
+    "COMMAND_PING_NAME": "ping",
+    "COMMAND_PING_DESCRIPTION": "Pokazuje ping bota.",
+    "COMMAND_PING_TEXT_PONG": "Pong!"
+}

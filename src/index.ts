@@ -1,9 +1,7 @@
-import Client from "./classes/Client";
-
-const client = new Client();
+import Client from "~/classes/Client";
 
 try {
-    client.start();
+    new Client();
 } catch (error) {
     console.error(error);
 }
