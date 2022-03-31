@@ -1,7 +1,4 @@
-import Client from "~/classes/Client";
+import Client from '~/classes/Client';
 
-try {
-    new Client();
-} catch (error) {
-    console.error(error);
-}
+// eslint-disable-next-line no-new
+new Client();

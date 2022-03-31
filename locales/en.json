@@ -1,0 +1,11 @@
+{
+  "commands": {
+    "ping": {
+      "name": "ping",
+      "description": "Shows bot's ping.",
+      "texts": {
+        "pong": "Pong!"
+      }
+    }
+  }
+}

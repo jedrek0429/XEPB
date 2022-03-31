@@ -1,13 +1,20 @@
-import { CommandRun } from "~/interfaces/Command";
-import { ApplicationCommandData, CommandInteraction } from "discord.js";
-import Client from "~/classes/Client";
+import { CommandRun } from '~/interfaces/Command';
+import { ApplicationCommandType, CommandInteraction } from 'discord.js';
+import Embed from '~/classes/Embed';
+import Client from '~/classes/Client';
+import { I18nCommandData } from '~/utils/types';
 
-export const disabled: boolean = false;
-export const data: ApplicationCommandData = {
-    name: "ping",
-    description: "pongs..."
-}
-export const run: CommandRun = async (interaction: CommandInteraction) => {
-    const client: Client = interaction.client as Client;
-    interaction.reply({ content: client.i18n.get("en", "COMMAND_PING_TEXT_PONG") });
-}; 
+export const data: I18nCommandData = {
+	name: 'ping',
+	type: ApplicationCommandType.ChatInput,
+} as I18nCommandData;
+export const run: CommandRun = (interaction: CommandInteraction) => {
+	const client: Client = interaction.client as Client;
+	interaction.reply({
+		embeds: [
+			new Embed(client, interaction.locale).setDescription(
+				client.i18n.t('commands.ping.texts.pong', { lng: interaction.locale }),
+			),
+		],
+	});
+};

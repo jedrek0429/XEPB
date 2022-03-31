@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES2022",
     "module": "CommonJS",
-    "lib": [
-      "DOM",
-      "ES6",
-      "ES2021",
-      "ESNext.AsyncIterable"
-    ],
+    "lib": ["DOM", "ES6", "ES2021", "ESNext.AsyncIterable"],
     "sourceMap": true,
     "rootDir": "./src",
     "outDir": "./dist",
@@ -31,9 +26,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["examples"]
 }

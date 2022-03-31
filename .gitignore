@@ -1,4 +1,4 @@
 node_modules/
 .vscode/
 dist/
-xepb-pm2.json
+.prettierignore

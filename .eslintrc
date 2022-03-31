@@ -275,7 +275,15 @@
 		"no-shadow-restricted-names": "error",
 		"no-undef": "error",
 		"no-undef-init": "error",
-		"no-unused-vars": "off",
+		"no-unused-vars": [
+			"warn",
+			{
+				"vars": "all",
+				"args": "after-used",
+				"ignoreRestSiblings": false,
+				"caughtErrors": "none"
+			}
+		],
 		"no-use-before-define": [
 			"error",
 			{
@@ -581,7 +589,7 @@
 		],
 		"no-new-symbol": "error",
 		"no-this-before-super": "error",
-		"no-useless-constructor": "off",
+		"no-useless-constructor": "warn",
 		"no-useless-rename": [
 			"error",
 			{
