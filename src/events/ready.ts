@@ -1,6 +1,6 @@
 import { EventRun } from '~/interfaces/Event';
 import Client from '~/classes/Client';
-import { Routes } from 'discord-api-types/v9';
+import { Routes } from 'discord-api-types/v10';
 
 export const run: EventRun = (client: Client) => {
 	client.restAPI

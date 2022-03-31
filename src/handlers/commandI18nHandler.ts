@@ -1,7 +1,7 @@
 import Client from '~/classes/Client';
 import { I18nCommandData } from '~/utils/types';
 import { Command } from '~/interfaces/Command';
-import handleOptions from './optionsI18nHandler';
+import handleOptions from '~/handlers/optionsI18nHandler';
 
 export default (client: Client, command: Command): I18nCommandData => {
 	const data: I18nCommandData = {
