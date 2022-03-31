@@ -10,7 +10,7 @@ export default (client: Client, command: Command): I18nCommandData => {
 	};
 	for (const lang of ['en-US', 'pl']) {
 		data.name_localizations[lang] = client.i18n.t(`commands.${command.data.name}.name`, { lng: lang }) || data.name;
-		// FIXME - the code stops here
+		// FIXME - 
 		data.description_localizations[lang] = client.i18n.t(`commands.${command.data.name}.description`, { lng: lang }) || data.description;
 		handleOptions(data, lang, client, command);
 	}
