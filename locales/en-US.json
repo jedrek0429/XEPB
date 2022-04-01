@@ -4,7 +4,7 @@
       "name": "ping",
       "description": "Shows bot's ping.",
       "texts": {
-        "pong": "Pong!"
+        "pong": "Pong! You are using english."
       }
     }
   }

@@ -1,7 +1,7 @@
-import Client from '~/classes/Client';
+import Client from '@classes/Client';
 import glob from 'glob';
 // eslint-disable-next-line no-shadow
-import { Event } from '~/interfaces/Event';
+import { Event } from '@interfaces/Event';
 import { basename } from 'path';
 import { ClientEvents, Events } from 'discord.js';
 

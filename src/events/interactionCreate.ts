@@ -1,7 +1,7 @@
-import { EventRun } from '~/interfaces/Event';
-import Client from '~/classes/Client';
+import { EventRun } from '@interfaces/Event';
+import Client from '@classes/Client';
 import { CommandInteraction } from 'discord.js';
-import { Command } from '~/interfaces/Command';
+import { Command } from '@interfaces/Command';
 
 export const run: EventRun = async (
 	client: Client,

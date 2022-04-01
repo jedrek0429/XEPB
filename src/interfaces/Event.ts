@@ -1,4 +1,4 @@
-import Client from '~/classes/Client';
+import Client from '@classes/Client';
 
 export interface EventRun {
   // eslint-disable-next-line no-unused-vars

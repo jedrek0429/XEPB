@@ -1,7 +1,7 @@
 import { TextChannel } from 'discord.js';
-import Client from '~/classes/Client';
-import Embed from '~/classes/Embed';
-import { errorsChannel } from '~/config.json';
+import Client from '@classes/Client';
+import Embed from '@classes/Embed';
+import { errorsChannel } from '@config.json';
 
 export default class ErrorHandler {
 	private client: Client;

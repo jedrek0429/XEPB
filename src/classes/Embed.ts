@@ -1,7 +1,7 @@
 import { EmbedBuilder } from '@discordjs/builders';
 import { APIEmbedField, ColorResolvable, Util } from 'discord.js';
 import i18next, { TOptions } from 'i18next';
-import Client from '~/classes/Client';
+import Client from '@classes/Client';
 
 export interface LocaleFieldOptions extends APIEmbedField {
 	localeNameKey?: string;

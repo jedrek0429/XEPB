@@ -1,12 +1,12 @@
 import { Client, ClientOptions, Collection, GatewayIntentBits } from 'discord.js';
 import { REST } from '@discordjs/rest';
-import { Command } from '~/interfaces/Command';
+import { Command } from '@interfaces/Command';
 const defaultClientOptions: ClientOptions = {
 	intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 };
-import handleEvents from '~/handlers/eventHandler';
-import handleCommands from '~/handlers/commandHandler';
-import ErrorHandler from '~/handlers/ErrorHandler';
+import handleEvents from '@handlers/eventHandler';
+import handleCommands from '@handlers/commandHandler';
+import ErrorHandler from '@handlers/ErrorHandler';
 import i18next from 'i18next';
 import ICU from 'i18next-icu';
 import Backend from 'i18next-fs-backend';
@@ -48,14 +48,13 @@ export default class XEPBClient extends Client {
 			.use(ICU)
 			.use(Backend)
 			.init({
-				debug: true,
-				fallbackLng: 'en',
-				preload: ['en', 'pl'],
+				fallbackLng: 'en-US',
+				preload: ['en-US', 'pl'],
+				load: 'currentOnly',
 				backend: { loadPath: join(__dirname, '../../locales/{{lng}}.json') },
 			});
 		this.restAPI = new REST({ version: '9' }).setToken(this.token!);
 		await handleCommands(this);
 		await handleEvents(this);
-		console.log(this.commands);
 	}
 }

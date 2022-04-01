@@ -1,9 +1,9 @@
 // @ts-nocheck
 
-import { CommandRun } from "~/interfaces/Command";
+import { CommandRun } from "@interfaces/Command";
 import { CommandInteraction } from "discord.js";
-import Client from "~/classes/Client";
-import { I18nCommandData } from "~/utils/types";
+import Client from "@classes/Client";
+import { I18nCommandData } from "@utils/types";
 
 export const disabled: boolean = false;
 export const data: I18nCommandData = { name: "example" } as I18nCommandData;

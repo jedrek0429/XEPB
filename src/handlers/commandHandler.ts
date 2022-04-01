@@ -1,6 +1,6 @@
-import Client from '~/classes/Client';
+import Client from '@classes/Client';
 import glob from 'glob';
-import { Command } from '~/interfaces/Command';
+import { Command } from '@interfaces/Command';
 import handleCommandsI18n from './commandI18nHandler';
 
 export default async (client: Client) => {

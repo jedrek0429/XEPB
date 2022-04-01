@@ -1,5 +1,5 @@
 import { CommandInteraction } from 'discord.js';
-import { I18nCommandData } from '~/utils/types';
+import { APIApplicationCommand } from 'discord-api-types/v10';
 
 export interface CommandRun {
   // eslint-disable-next-line no-unused-vars
@@ -8,6 +8,6 @@ export interface CommandRun {
 
 export interface Command {
   disabled?: boolean;
-  data?: I18nCommandData;
+  data?: APIApplicationCommand;
   run: CommandRun;
 }

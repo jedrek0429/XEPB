@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
-import Client from '~/classes/Client';
-import { Command } from '~/interfaces/Command';
+import Client from '@classes/Client';
+import { Command } from '@interfaces/Command';
 
 const handleOptions = (x: any, lang: string, client: Client, command: Command): void => {
 	if (x.options.length) {

@@ -26,7 +26,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
-      "~/*": ["./src/*"]
+      "@*": ["./src/*"]
     }
   },
   "exclude": ["examples"]

@@ -4,7 +4,7 @@
       "name": "ping",
       "description": "Pokazuje ping bota.",
       "texts": {
-        "pong": "Pong!"
+        "pong": "Pong! Używasz języka polskiego."
       }
     }
   }
