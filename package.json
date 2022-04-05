@@ -1,13 +1,13 @@
 {
   "name": "xepb",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "dist",
   "scripts": {
     "build": "npx tsc && npx resolve-tspaths",
     "lint": "npx eslint .",
     "test": "npm i && npm run lint && npm run build",
     "prestart": "npm test",
-    "start": "node dist/index.js"
+    "start": "node --enable-source-maps ."
   },
   "repository": {
     "type": "git",
