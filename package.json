@@ -4,7 +4,7 @@
   "main": "dist",
   "scripts": {
     "build": "npx tsc && npx resolve-tspaths",
-    "lint": "npx eslint .",
+    "lint": "npx eslint",
     "test": "npm i && npm run lint && npm run build",
     "prestart": "npm test",
     "start": "node --enable-source-maps ."
