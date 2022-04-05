@@ -4,15 +4,16 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc && npx resolve-tspaths",
-    "test": "node dist/index.js",
-    "prestart": "npm i && npm run build",
+    "lint": "npx eslint .",
+    "test": "npm i && npm run lint && npm run build",
+    "prestart": "npm test",
     "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jedrek0429/XEPB.git"
   },
-  "author": "Andrzej Bansleben",
+  "author": "ela",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jedrek0429/XEPB/issues"
