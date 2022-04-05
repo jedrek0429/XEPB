@@ -26,7 +26,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
-      "@*": ["./src/*"]
+      "@classes/*": ["./src/classes/*"],
+      "@handlers/*": ["./src/handlers/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "config": ["./src/config.json"],
+      "~/*": ["./src/*"]
     }
   },
   "exclude": ["examples"]
