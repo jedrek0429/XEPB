@@ -22,7 +22,7 @@
   "description": "",
   "dependencies": {
     "@discordjs/builders": "^0.14.0-dev.1650586175-61a44c5",
-    "@discordjs/rest": "^0.4.0-dev.1649117272-905a6a1",
+    "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.31.0",
     "discord.js": "^14.0.0-dev.1650672498-3617093",
     "glob": "^7.2.0",
