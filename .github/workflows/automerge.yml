@@ -1,30 +1,28 @@
-# https://gist.github.com/xt0rted/46475099dc0a70ba63e16e3177407872
 name: Dependabot auto-merge
 
 on: pull_request_target
 
 permissions:
-  pull-requests: read
-  contents: read
+  pull-requests: write
+  contents: write
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
   dependabot:
+    needs: [test]
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-
+    if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
       - name: Dependabot metadata
-        id: dependabot_metadata
-        uses: dependabot/fetch-metadata@v1.2.1
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Authenticate cli with a PAT
-        run: echo "${{ secrets.DEPENDABOT_TOKEN }}" | gh auth login --with-token
-
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Enable auto-merge for Dependabot PRs
-        if: steps.dependabot_metadata.outputs.dependency-type == 'direct:development' && (steps.dependabot_metadata.outputs.update-type == 'version-update:semver-minor' || steps.dependabot_metadata.outputs.update-type == 'version-update:semver-patch')
+        if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --merge "$PR_URL"
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
