@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "main": "dist",
   "scripts": {
-    "build": "npx tsc && npx resolve-tspaths",
-    "lint": "npx eslint",
+    "build": "tsc && npx resolve-tspaths",
+    "lint": "eslint ./src/**/*.ts --fix",
     "test": "npm i && npm run lint && npm run build",
     "prestart": "npm test",
     "start": "node --enable-source-maps ."

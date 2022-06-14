@@ -11,6 +11,7 @@ import i18next from 'i18next';
 import ICU from 'i18next-icu';
 import Backend from 'i18next-fs-backend';
 import { join } from 'path';
+import DotEnv from './DotEnv';
 
 export default class XEPBClient extends Client {
 	public commands: Collection<string, Command> = new Collection();
@@ -24,15 +25,14 @@ export default class XEPBClient extends Client {
 	/**
 	 * Custom client class
 	 * @param {ClientOptions} clientOptions - client options
-	 * @param {string} token - token of the client, if not provided, it will be taken from the environment variable `TOKEN`
+	 * @param {string} token - token of the client, if not provided, it will be taken from the environment variable `DISCORD_TOKEN`
 	*/
 	constructor(
 		clientOptions: ClientOptions = defaultClientOptions,
-		token: string = process.env.TOKEN!,
+		token: string | null = null,
 	) {
+		(() => new DotEnv())();
 		super(clientOptions);
-		if (!token)
-			throw new Error('The `token` variable is not passed and the `TOKEN` environment variable does not exist or is empty.');
 		super.token = token;
 		this.init();
 	}
